@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2D Conway's Game of Life</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    #life2d-canvas { border: 1px solid #888; background: #222; display: block; margin: 0 auto; }
+    #ui2d-panel { text-align: center; margin: 1em; }
+  </style>
+</head>
+<body>
+  <div id="ui2d-panel">
+    <button id="play2d">Play</button>
+    <button id="step2d">Step</button>
+    <button id="clear2d">Clear</button>
+    <button id="random2d">Randomize</button>
+    <label>Grid Size <input type="number" id="size2d" min="10" max="200" value="50" style="width:4em"></label>
+    <label>Speed <input type="range" id="speed2d" min="10" max="1000" value="100" step="10" style="width:8em"></label>
+    <br>
+    <label>Paste config:<br>
+      <textarea id="paste2d" rows="2" cols="40" placeholder="e.g. [10,10],[11,10],[12,10]"></textarea>
+    </label>
+    <button id="apply2d">Apply</button>
+    <span id="gen2d">Gen: 0</span>
+    <span id="live2d">Live: 0</span>
+  </div>
+  <canvas id="life2d-canvas" width="600" height="600"></canvas>
+  <script type="module" src="js/life2d.js"></script>
+</body>
+</html>
