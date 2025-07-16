@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Conway's Game of Life</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="ui-panel">
+    <button id="play-pause">Play</button>
+    <button id="step">Step</button>
+    <label>Speed <input type="range" id="speed" min="0.1" max="10" step="0.1" value="1"></label>
+    <label>Grid X <input type="number" id="grid-x" min="10" max="100" value="20"></label>
+    <label>Grid Y <input type="number" id="grid-y" min="10" max="100" value="20"></label>
+    <label>Grid Z <input type="number" id="grid-z" min="10" max="100" value="20"></label>
+    <button id="randomize">Randomize</button>
+    <button id="clear">Clear</button>
+    <select id="preset-select"><option value="">Load Preset</option></select>
+    <button id="save">Save</button>
+    <input type="file" id="load" style="display:none">
+    <button id="load-btn">Load</button>
+    <button id="drag-mode-toggle">Drag Mode: OFF</button>
+    <div id="status">
+      <span id="generation">Gen: 0</span>
+      <span id="live-cells">Live: 0</span>
+      <span id="fps">FPS: 0</span>
+    </div>
+    <div id="coord-inputs" style="margin-top:8px;">
+      <label>Set Cell:X <input type="number" id="input-x" min="0" value="0" style="width:3em"></label>
+      <label>Y <input type="number" id="input-y" min="0" value="0" style="width:3em"></label>
+      <label>Z <input type="number" id="input-z" min="0" value="0" style="width:3em"></label>
+      <button id="set-cell-btn">Set Cell</button>
+    </div>
+    <div id="paste-livecells" style="margin-top:8px;">
+      <label>Paste live cells array:<br>
+        <textarea id="livecells-input" rows="3" cols="40" placeholder="e.g. [2,2,1],[2,3,2],..." style="resize:vertical;"></textarea>
+      </label>
+      <button id="apply-livecells-btn">Apply Cells</button>
+    </div>
+  </div>
+  <div id="canvas-container">
+    <canvas id="life-canvas"></canvas>
+  </div>
+  <!-- Only load main.js as a module, let it handle all imports -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
